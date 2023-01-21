@@ -1,7 +1,7 @@
 
 let data = [1,2,3,4,5];
-let el = 8;
-let index = 2;
+let el = 10;
+let index = 0;
 function insertElem(data,el,index){
     for (let i=data.length-1; i>=0; i--){
         if (i>=index) {
