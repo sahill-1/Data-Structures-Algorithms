@@ -4,7 +4,7 @@ function Palindrome(str){
     let flag = true;
     let n = str.length;
     for (let i=0; i<n; i++){
-        if(str[i]!==str[n-i-1]){
+        if(str[i] !== str[n-1-i]){
             flag = false;
         }
     }
@@ -12,9 +12,9 @@ function Palindrome(str){
         console.log("Palindrome")
     }
     else{
-        console.log("Not a Palindrome")
+        console.log("Not Palindrome")
     }
 }
 
-let str = "abcddba"
+let str = "abcba"
 Palindrome(str);
