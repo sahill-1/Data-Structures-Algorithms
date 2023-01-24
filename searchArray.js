@@ -8,4 +8,4 @@ for (let i=0; i<array.length; i++){
         break;
     }
 }
-console.log(index)
+console.log(index);
