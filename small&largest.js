@@ -10,5 +10,5 @@ for (let i=0; i<arr.length; i++){
         max = arr[i]
     }
 }
-console.log("Smallest number is " + min);
-console.log("Largest number is " + max);
+console.log("Smallest number is " + min)
+console.log("Largest number is " + max)
