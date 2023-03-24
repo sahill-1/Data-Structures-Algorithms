@@ -1,6 +1,6 @@
 // Find largest 3 numbers in an array
 
-let array = [ 1,3,9,5,8,4,6,11];
+let array = [1,3,9,5,8,4,6,11];
 
 let first, second, third;
 first = second = third = -Infinity;
