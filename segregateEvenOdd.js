@@ -19,6 +19,14 @@ function segregateEvenOdd(arr, n){
     console.log(a);
 }
 
+function leftRotate(arr, n, k){
+    let mod = k % n;
+
+    for (let i=0; i<n ; i++){
+        console.log(arr[(mod + i) % n] + " ")
+    }
+}
+
 let arr = [1,2,3,4,5,6,8,9];
 let n = arr.length;
 segregateEvenOdd(arr,n)
