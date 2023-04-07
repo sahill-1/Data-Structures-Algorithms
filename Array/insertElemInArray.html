@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function addElement(){
+        let data = [1,2,3,4,5];
+        let el = document.getElementById("element").value;
+        let index = document.getElementById("index").value;
+        for(let i=data.length-1; i>=0; i--){
+            if(i>=index){
+                data[i+1]=data[i];
+                if(i=index){
+                    data[i]=el
+                }
+            }
+        }
+        console.log(data)
+    }
+</script>
+<body>
+    <input id="element" type="text" placeholder="Enter Element"><br>
+    <input id="index" type="text" placeholder="Enter Index"><br>
+    <button onclick="addElement()">Insert Element</button>
+</body>
+</html>
