@@ -12,10 +12,7 @@ function Reorder(arr, index, n){
 
             index[i] = OldTargetI;
             arr[i] = OldTargetE;
-
-            
         }
-        
     }
     console.log(arr);
     console.log(index);
