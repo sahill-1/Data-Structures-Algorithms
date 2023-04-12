@@ -18,8 +18,12 @@ function Student(first, last, age, job){
 }
 
 let student1 = new Student("Sahil", "Vishwakarma", 25, "Frontend Developer");
+let student2 = new Student("Nitin", "Meena", 25, "Backend")
 student1.nationality = "Indian"
 student1.name = function (){
     return this.firstName + " " +this.lastName;
 }
-console.log(student1.name());
+Student.prototype.nationality = "Indian"
+
+
+console.log(student2);
