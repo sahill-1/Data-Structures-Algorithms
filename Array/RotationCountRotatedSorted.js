@@ -19,6 +19,8 @@ function countRotations(arr, n)
     }
     return min_index;
 }
+//code
+
  
 let arr = [15, 18, 2, 3, 6, 12];
 let n = arr.length;
