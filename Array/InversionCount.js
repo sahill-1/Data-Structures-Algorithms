@@ -68,3 +68,6 @@ function mergeSortAndCount(arr,l, r){
 let arr = new Array(1, 20, 6, 4, 5);
 let n = arr.length-1;
 console.log(mergeSortAndCount(arr, 0 , n, ))
+
+// TC - O(n * log n), The algorithm used is divide and conquer,  merge sort whose complexity is O(n log n).
+// Auxiliary Space- O(n), Temporary array.
