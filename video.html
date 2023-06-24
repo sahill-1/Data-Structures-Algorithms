@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #video-player {
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-player"></div>
+    <button id="buttonOne">1</button>
+    <button id="buttonTwo">2</button>
+    <button id="buttonThree">3</button>
+    <button id="buttonFour">4</button>
+
+    <script>
+        let videoPlayer = document.getElementById("video-player");
+
+
+        function playVideo(videoUrl) {
+            videoPlayer.innerHTML = `<video src="${videoUrl}" controls autoplay></video>`;
+        }
+
+        var button1 = document.getElementById('buttonOne');
+        button1.addEventListener('click', function () {
+            playVideo('https://youtu.be/ehi9jn93Tpc');
+        });
+
+        var button2 = document.getElementById('buttonTwo');
+        button2.addEventListener('click', function () {
+            playVideo('https://youtu.be/SMKPKGW083c');
+        });
+
+        var button3 = document.getElementById('buttonThree');
+        button3.addEventListener('click', function () {
+            playVideo('https://youtu.be/ehi9jn93Tpc');
+        });
+
+        var button4 = document.getElementById('buttonFour');
+        button4.addEventListener('click', function () {
+            playVideo('https://youtu.be/SMKPKGW083c');
+        });
+    </script>
+</body>
+</html>
