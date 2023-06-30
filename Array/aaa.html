@@ -10,11 +10,25 @@
     
 </body>
 <script>
-    let body = document.createElement("div");
-    let a = document.createElement("h3");
-    h3.classList.add("abcd");
-    abcd.style.fontSize = "50px";
-    body.textContent = "hello my name is sahil"
+    function printPattern(n){
+        //Empty string to store pattern
+        let pattern = " ";
 
+        //Loop through each row
+        for (let i=0; i<n; i++){
+            //print spaces for indentation
+            for (let j=0; j<i; j++){
+                pattern += " ";
+            }
+
+            //print the letters in ascending order
+            for (let k=i; k<n; k++){
+                pattern += String.fromCharCode(65+k) + " ";
+            }
+
+            
+        }
+
+    }
 </script>
 </html>
