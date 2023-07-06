@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2 class="heading">Heading 1</h2>
+  <h2 class="heading">Heading 2</h2>
+  <h2 class="heading">Heading 3</h2>
+
+  <div class="content" id="content1">
+    <p>Content for Heading 1</p>
+  </div>
+  <div class="content" id="content2">
+    <p>Content for Heading 2</p>
+  </div>
+  <div class="content" id="content3">
+    <p>Content for Heading 3</p>
+  </div>
+
+  <script>
+    var headings = document.getElementsByClassName('heading');
+    var contents = document.getElementsByClassName('content');
+
+    for (var i = 0; i < headings.length; i++) {
+      headings[i].addEventListener('click', function() {
+        var contentId = "content" + (Array.prototype.indexOf.call(headings, this) + 1);
+        
+        // Hide all content elements
+        for (var j = 0; j < contents.length; j++) {
+          contents[j].style.display = 'none';
+        }
+        
+        // Show the corresponding content element
+        var content = document.getElementById(contentId);
+        content.style.display = 'block';
+      });
+    }
+  </script>
+</body>
+</html>
