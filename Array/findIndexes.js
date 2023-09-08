@@ -2,26 +2,38 @@
 // In case of multiple subarray, return the subarray indexes which come first on moving left to right
 // NOTE: you have to return an array list consisting of two elements left and right. Incase no subarray exists return an array consisting of element -1.
 
-function index(arr, s, n) {
-  for (let i = 0; i < n; i++) {
-    let currentSum = arr[i];
+function findSubarrayWithSum(arr, S) {
+  let left = 0; // Left pointer
+  let right = 0; // Right pointer
+  let currentSum = 0; // Current sum of elements in the subarray
 
-    if (currentSum === s) {
-      console.log("The index of s is" + i);
-      return;
-    } else {
-      for (let j = i + 1; j < n; j++) {
-        if(currentSum+arr[j] === s){
-            console.log("The left and right index of s is" + i + "and" + j + "respectively." );
-            return;
-        }
-      }
+  while (right < arr.length) {
+    currentSum += arr[right];
+
+    while (currentSum > S) {
+      currentSum -= arr[left];
+      left++;
     }
-    console.log("no such sum found")
+
+    if (currentSum === S) {
+      // Found a subarray with the given sum
+      return [left , right ]; // 1-based indexing
+    }
+
+    right++;
   }
+
+  // If no subarray is found
+  return [-1];
 }
-let arr = [2,4,3,7,1,9,8];
-let s = 11;
-let n = 7;
-let x = index(arr, s, n);
-console.log(x);
+
+const arr = [1, 2, 4 ];
+const S = 10;
+
+const result = findSubarrayWithSum(arr, S);
+
+if (result[0] === -1) {
+  console.log("No subarray found with the given sum.");
+} else {
+  console.log(`Subarray with sum ${S} found at indexes: [${result[0]}, ${result[1]}]`);
+}
