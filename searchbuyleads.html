@@ -2,16 +2,18 @@
 <html>
 <head>
   <style>
-    .content {
+     .content {
       display: none;
-    }
+    } 
   </style>
 </head>
 <body>
-  <h2 class="heading">Heading 1</h2>
-  <h2 class="heading">Heading 2</h2>
-  <h2 class="heading">Heading 3</h2>
-
+  <div style="display: flex; justify-content: space-around;">
+    <h2 class="heading">Heading 1</h2>
+    <h2 class="heading">Heading 2</h2>
+    <h2 class="heading">Heading 3</h2>
+  </div>
+  
   <div class="content" id="content1">
     <p>Content for Heading 1</p>
   </div>
@@ -21,25 +23,55 @@
   <div class="content" id="content3">
     <p>Content for Heading 3</p>
   </div>
-
   <script>
     var headings = document.getElementsByClassName('heading');
     var contents = document.getElementsByClassName('content');
-
+    
+    // Check if the page is being loaded for the first time
+    var isFirstLoad = localStorage.getItem('isFirstLoad');
+  
+    if (isFirstLoad === null) {
+      // First-time load, set default state (show content for Heading 1)
+      var defaultContent = document.getElementById('content1');
+      defaultContent.style.display = 'block';
+  
+      // Set a flag to indicate that the page has been loaded once
+      localStorage.setItem('isFirstLoad', 'false');
+    }
+  
+    // Check if any heading 2 or heading 3 has been clicked
+    var lastClickedHeading = localStorage.getItem('lastClickedHeading');
+    if (lastClickedHeading !== null) {
+      // Hide all content elements
+      for (var j = 0; j < contents.length; j++) {
+        contents[j].style.display = 'none';
+      }
+      
+      // Show the corresponding content element
+      var content = document.getElementById(lastClickedHeading);
+      content.style.display = 'block';
+    }
+  
     for (var i = 0; i < headings.length; i++) {
       headings[i].addEventListener('click', function() {
         var contentId = "content" + (Array.prototype.indexOf.call(headings, this) + 1);
-        
+  
         // Hide all content elements
         for (var j = 0; j < contents.length; j++) {
           contents[j].style.display = 'none';
         }
-        
+  
         // Show the corresponding content element
         var content = document.getElementById(contentId);
         content.style.display = 'block';
+  
+        // Store the last clicked heading in localStorage
+        localStorage.setItem('lastClickedHeading', contentId);
       });
     }
   </script>
+  
+  
+
 </body>
 </html>

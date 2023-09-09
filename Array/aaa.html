@@ -1,32 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html lang="en-US">
 <body>
-    
-</body>
-<script>
-    function printPattern(n){
-        //Empty string to store pattern
-        let pattern = " ";
+<style>
+    .goog-te-gadget img {
+    border: none;
+}
+</style>
+<div id="google_translate_element"></div>
 
-        //Loop through each row
-        for (let i=0; i<n; i++){
-            //print spaces for indentation
-            for (let j=0; j<i; j++){
-                pattern += " ";
-            }
-
-            //print the letters in ascending order
-            for (let k=i; k<n; k++){
-                pattern += String.fromCharCode(65+k) + " ";
-            }
-        }
-
-    }
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+}
 </script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<p>This example displays a horizontal translate button.</p>
+
+</body>
 </html>
