@@ -18,3 +18,8 @@ function Palindrome(str){
 
 let str = "abcba"
 Palindrome(str);
+
+{/*
+
+
+*/}
