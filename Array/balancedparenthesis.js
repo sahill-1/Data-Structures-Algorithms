@@ -1,5 +1,4 @@
-//BALANCED PARE
-
+//BALANCED PAir
 function balancedParanthesis(expr){
     let stack = [];
     for (let i=0; i<expr.length; i++){    
@@ -8,7 +7,6 @@ function balancedParanthesis(expr){
             stack.push(x);
             continue;
         }
-
         if(stack.length===0){
             return false;
         }
@@ -27,9 +25,7 @@ function balancedParanthesis(expr){
     }
     return (stack.length===0);
 }
-
 let expr = "(){"; 
-
 if(balancedParanthesis(expr)){
     console.log("Balanced Parenthesis")
 }
