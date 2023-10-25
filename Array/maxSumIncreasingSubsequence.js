@@ -8,17 +8,15 @@ function maxSumIncreasingSubsequence(arr) {
             }
         }
     }
-
-    // Find the maximum value in dp array manually
+    //Find the maximum value in dp array manually
     let max = dp[0];
     for (let i = 1; i < n; i++) {
         if (dp[i] > max) {
             max = dp[i];
         }
     }
-
     return max;
 }
 const arr = [1, 101, 2, 3, 100];
 const result = maxSumIncreasingSubsequence(arr);
-console.log("Maximum", result);
+console.log("Maximum", result); 

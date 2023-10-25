@@ -8,8 +8,6 @@ function AbundantNumber(n){
     let sum = 0; 
     for (let i=0; i<bag.length; i++){
         sum += bag[i];
-
-        
     }
     if(sum > n){
         return true;
@@ -17,9 +15,7 @@ function AbundantNumber(n){
     else{
         return false;
     }
-    
 }
-
 let  n = 18;
 let x = AbundantNumber(n);
-console.log(x)
+console.log(x);
